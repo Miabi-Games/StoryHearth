@@ -1,0 +1,39 @@
+root = true
+
+[*]
+charset = utf-8
+tab_width = 4
+indent_size = 4
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+guidelines = 80, 120
+
+
+[*.csproj]
+tab_width = 2
+indent_size = 2
+indent_style = space
+
+
+[*.cs]
+csharp_style_namespace_declarations = file_scoped:warning
+csharp_style_allow_blank_line_after_namespace = true
+dotnet_style_prefer_collection_expression = false:suggestion
+
+dotnet_diagnostic.IDE0290.severity = none # Use primary constructor
+
+dotnet_diagnostic.CA1825.severity = warning # Avoid zero-length array allocations
+
+
+[*.{json,yaml,yml}]
+tab_width = 2
+indent_size = 2
+indent_style = space
+
+
+[*.md]
+tab_width = 2
+indent_size = 2
+indent_style = space

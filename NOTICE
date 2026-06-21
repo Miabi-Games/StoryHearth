@@ -1,0 +1,90 @@
+NOTICE
+
+This NOTICE file provides additional information about licensing, attribution, and trademark usage for this repository.
+
+This repository contains software, assets, and content developed as part of:
+
+* The "StoryHearth Game Engine™"
+
+and
+
+* The "Stories by the Hearth™" Game Series
+
+---
+
+1. Copyright
+
+Copyright (c) 2026 Mia B. Regula (doing business as Miabi Games™)
+
+All original code and content, unless otherwise specified, is authored by the project maintainer.
+
+---
+
+2. License Summary
+
+The primary codebase is licensed under the MIT License (see LICENSE file).
+
+This repository includes components that may be licensed under terms different from the MIT License, including:
+
+* CC0 (Public Domain) assets
+* Third-party libraries and tools
+* Proprietary or brand-restricted assets
+
+Each such component will include its own license file or notice where applicable.
+
+LICENSE FILES OR NOTICES IN SUBDIRECTORIES TAKE PRECEDENCE over the root LICENSE for the files within those directories.
+
+---
+
+3. Third-Party Components
+
+This project includes third-party software and assets.
+
+Where applicable:
+
+* Attribution requirements will be documented in the relevant directories
+* Original licenses will be included alongside the third-party content
+
+If a third-party component requires attribution, it will be listed below or within its directory.
+
+Included third-party components:
+
+*None at this time*
+
+Additional third-party components may be listed here as the project evolves. See subdirectories for applicable notices.
+
+---
+
+4. Trademarks
+
+"Miabi™", "Miabi Games™", "StoryHearth™", "StoryHearth Game Engine™", "StoryHearth Story Kit™", and "Stories by the Hearth™" are all trademarks of Mia B. Regula (doing business as Miabi Games™).
+
+No license to use these trademarks is granted.
+
+Use of these names, logos, or branding is not permitted except for descriptive purposes (e.g., "built using StoryHearth Game Engine™"), and may not imply endorsement or represent your work as an official release.
+
+---
+
+5. Attribution Guidance (Optional)
+
+While not required under the MIT License, attribution is appreciated.
+
+Example:
+
+"Built using the StoryHearth Game Engine™"
+
+---
+
+6. Future Additions
+
+As the project grows, this NOTICE file may be updated to include:
+
+* Required attributions for third-party assets
+* Additional licensing clarifications
+* Expanded component listings
+
+Users are responsible for reviewing this file and all relevant subdirectory notices when using the project.
+
+---
+
+END OF NOTICE
