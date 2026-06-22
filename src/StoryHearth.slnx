@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="GameApp/GameApp.csproj" Id="4f79596e-8998-4a96-bd06-d886ba6bddd8" />
+  <Project Path="StoryHearth.Engine/StoryHearth.Engine.csproj" Id="b1c3e5e5-fd1c-48a0-abbc-7f754e85b306" />
+  <Project Path="StoryHearth.Platform.Raylib/StoryHearth.Platform.Raylib.csproj" Id="a3bf0084-e35d-492a-8ae7-744a40621228" />
+  <Project Path="StoryHearth.Platform/StoryHearth.Platform.csproj" />
+</Solution>
