@@ -7,13 +7,26 @@ public class RaylibPlatform : Platform
     private RaylibPlatform() { }
 
     public static ApplicationRunResult BuildAndRunApplication(
-        EngineApplicationDefinition appDefinition)
+        ApplicationDefinition appDefinition, string[] args)
     {
-        return ApplicationRunResult.Unknown;
+        using Application app = Build(appDefinition, args);
+        return Run(app);
     }
 
     public static int ConvertToExitCode(ApplicationRunResult result)
     {
         return result.IsSuccess ? 0 : 1;
+    }
+
+    private static Application Build(
+        ApplicationDefinition appDefinition, string[] args)
+    {
+        ApplicationBuilder builder = new ApplicationBuilder();
+        return builder.Build(appDefinition, args);
+    }
+
+    private static ApplicationRunResult Run(Application app)
+    {
+        return ApplicationRunResult.Success;
     }
 }

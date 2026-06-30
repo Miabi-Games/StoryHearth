@@ -1,9 +1,8 @@
-using StoryHearth.Engine;
 using StoryHearth.Platform.Raylib;
 
 namespace GameApp;
 
-public class MyGameApplication : GameApplication
+public static class Program
 {
     public static int Main(string[] args)
     {
@@ -11,6 +10,6 @@ public class MyGameApplication : GameApplication
 
         return
             RaylibPlatform.ConvertToExitCode(
-            RaylibPlatform.BuildAndRunApplication(appDef));
+            RaylibPlatform.BuildAndRunApplication(appDef, args));
     }
 }
