@@ -1,4 +1,4 @@
-using StoryHearth.Platform.Raylib;
+using StoryHearth.Platform.RaylibBackend;
 
 namespace GameApp;
 
@@ -9,7 +9,7 @@ public static class Program
         var appDef = new MyGameApplicationDefinition();
 
         return
-            RaylibPlatform.ConvertToExitCode(
-            RaylibPlatform.BuildAndRunApplication(appDef, args));
+            RaylibApplicationRunner.ConvertToExitCode(
+            RaylibApplicationRunner.BuildAndRunApplication(appDef, args));
     }
 }

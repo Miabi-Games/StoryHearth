@@ -4,8 +4,8 @@ public class ApplicationBuilder
 {
     public ApplicationBuilder() { }
 
-    public Application Build(ApplicationDefinition appDef, string[] args)
+    public Application Build(ApplicationDefinition appDefinition, string[] args)
     {
-        return new Application();
+        return new Application(appDefinition);
     }
 }

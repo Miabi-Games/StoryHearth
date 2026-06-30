@@ -4,8 +4,11 @@ namespace StoryHearth.Engine;
 
 public class Application : IDisposable
 {
-    public Application()
+    public string WindowTitle => "A StoryHearth Game"; // will eventually come from data file
+
+    public Application(ApplicationDefinition appDefinition)
     {
+        _appDefinition = appDefinition;
     }
 
     public void Dispose()
@@ -17,4 +20,6 @@ public class Application : IDisposable
     protected virtual void Dispose(bool disposing)
     {
     }
+
+    private ApplicationDefinition _appDefinition;
 }

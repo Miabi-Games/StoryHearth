@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StoryHearth.Engine\StoryHearth.Engine.csproj" />
-    <ProjectReference Include="..\StoryHearth.Platform.Raylib\StoryHearth.Platform.Raylib.csproj" />
+    <ProjectReference Include="..\StoryHearth.Platform.RaylibBackend\StoryHearth.Platform.RaylibBackend.csproj" />
     <ProjectReference Include="..\StoryHearth.Platform\StoryHearth.Platform.csproj" />
   </ItemGroup>
 
