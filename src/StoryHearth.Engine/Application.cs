@@ -4,7 +4,7 @@ namespace StoryHearth.Engine;
 
 public class Application : IDisposable
 {
-    public string WindowTitle => "A StoryHearth Game"; // will eventually come from data file
+    public ApplicationSettings Settings { get; } = new();
 
     public Application(ApplicationDefinition appDefinition)
     {

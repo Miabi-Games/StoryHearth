@@ -6,9 +6,6 @@ namespace StoryHearth.Platform.RaylibBackend;
 
 public static class RaylibApplicationRunner
 {
-    const int SCREEN_WIDTH = 1920;
-    const int SCREEN_HEIGHT = 1080;
-
     public static ApplicationRunResult BuildAndRunApplication(
         ApplicationDefinition appDefinition, string[] args)
     {
@@ -30,15 +27,21 @@ public static class RaylibApplicationRunner
 
     private static void Run(Application app)
     {
-        Raylib.InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, app.WindowTitle);
+        int2 window_size = app.Settings.CanvasTargetSize;
+        int2 window_min_size = app.Settings.WindowMinSize;
+        string windowTitle = app.Settings.WindowTitle;
+
+        Raylib.SetConfigFlags(ConfigFlags.ResizableWindow);
+        Raylib.InitWindow(window_size.x, window_size.y, windowTitle);
         Raylib.SetTargetFPS(60);
+        Raylib.SetWindowMinSize(window_min_size.x, window_min_size.y);
 
         while(!Raylib.WindowShouldClose())
         {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.Black);
 
-            Raylib.DrawText(app.WindowTitle, 40, 40, 40, Color.RayWhite);
+            Raylib.DrawText(windowTitle, 40, 40, 40, Color.RayWhite);
 
             Raylib.EndDrawing();
         }

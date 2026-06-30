@@ -4,11 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace />
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\StoryHearth.Core\StoryHearth.Core.csproj" />
-    <ProjectReference Include="..\StoryHearth.Engine\StoryHearth.Engine.csproj" />
-  </ItemGroup>
 
 </Project>

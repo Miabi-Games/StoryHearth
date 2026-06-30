@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StoryHearth.Core\StoryHearth.Core.csproj" />
     <ProjectReference Include="..\StoryHearth.Engine\StoryHearth.Engine.csproj" />
     <ProjectReference Include="..\StoryHearth.Platform\StoryHearth.Platform.csproj" />
   </ItemGroup>

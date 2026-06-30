@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StoryHearth.Core\StoryHearth.Core.csproj" />
+  </ItemGroup>
+
 </Project>
