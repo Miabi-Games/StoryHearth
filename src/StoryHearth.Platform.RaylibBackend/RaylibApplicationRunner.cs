@@ -60,14 +60,14 @@ public static class RaylibApplicationRunner
 
         if (canvas_target_size.x <= 0 || canvas_target_size.y <= 0)
         {
-            throw new System.Exception(
-                "The canvas target size must be positive");
+            throw new ArgumentOutOfRangeException(
+                "The canvas target size must be positive in both dimensions");
         }
 
         if (window_min_size.x <= 0 || window_min_size.y <= 0)
         {
-            throw new System.Exception(
-                "The minimum window size must be postiive");
+            throw new ArgumentOutOfRangeException(
+                "The minimum window size must be postiive in both dimensions");
         }
 
         int2 window_size = new()
@@ -94,6 +94,48 @@ public static class RaylibApplicationRunner
         string window_title = app.Settings.WindowTitle ?? "";
 
         using var server = new RaylibServer();
+
+        // first frame only
+        if (!Raylib.WindowShouldClose())
+        {
+            int2 window_min_size = app.Settings.WindowMinSize;
+
+            // Note that this is only the max initial size. The user can still
+            // resize the window beyond this limit.
+            int current_monitor = Raylib.GetCurrentMonitor();
+            int monitor_width = Raylib.GetMonitorWidth(current_monitor);
+            int monitor_height = Raylib.GetMonitorHeight(current_monitor);
+
+            int max_width = monitor_width * 4 / 5;
+            int max_height = monitor_height * 4 / 5;
+
+            if (window_min_size.x > max_width || window_min_size.y > max_height)
+            {
+                throw new Exception(
+                    "For simplicity, the current version of the application does " +
+                    "not allow a minimum window size gerater than 80% of the " +
+                    "monitor resolution. The handling of smaller monitors may " +
+                    "be improved in future versions. But for now it's better to " +
+                    "simply set the minimum window size to something small " +
+                    "enough that this exception won't occur in normal client " +
+                    "environments.");
+            }
+
+            int2 window_size = RaylibServer.GetScreenSize();
+
+            if (window_size.x > max_width || window_size.y > max_height)
+            {
+                window_size.x = Math.Min(window_size.x, max_width);
+                window_size.y = Math.Min(window_size.y, max_height);
+
+                Raylib.SetWindowPosition(monitor_width / 10, monitor_height / 10);
+                Raylib.SetWindowSize(window_size.x - 1, window_size.y - 1);
+
+                Raylib.BeginDrawing();
+                Raylib.ClearBackground(Color.Black);
+                Raylib.EndDrawing();
+            }
+        }
 
         while (!Raylib.WindowShouldClose())
         {
