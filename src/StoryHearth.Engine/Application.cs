@@ -1,25 +1,16 @@
-using System;
-
 namespace StoryHearth.Engine;
 
-public class Application : IDisposable
+/// <summary>
+///     Tracks the application's top-level state.
+/// </summary>
+/// <remarks>
+///     <para>
+///         The application's top-level state is just what application screens
+///         are displayed. It may be expanded in the future, although it is
+///         encouraged to share state between screens using other mechanisms.
+///     </para>
+/// </remarks>
+public class Application
 {
-    public ApplicationSettings Settings { get; } = new();
-
-    public Application(ApplicationDefinition appDefinition)
-    {
-        _appDefinition = appDefinition;
-    }
-
-    public void Dispose()
-    {
-        Dispose(disposing: true);
-        GC.SuppressFinalize(this);
-    }
-
-    protected virtual void Dispose(bool disposing)
-    {
-    }
-
-    private ApplicationDefinition _appDefinition;
+    public Application() { }
 }

@@ -9,7 +9,7 @@ public static class Program
         var appDef = new MyGameApplicationDefinition();
 
         return
-            RaylibApplicationRunner.ConvertToExitCode(
-            RaylibApplicationRunner.BuildAndRunApplication(appDef, args));
+            RaylibServer.ConvertToExitCode(
+            RaylibServer.BuildAndRunApplication(appDef, args));
     }
 }

@@ -4,8 +4,11 @@ public class ApplicationBuilder
 {
     public ApplicationBuilder() { }
 
-    public Application Build(ApplicationDefinition appDefinition, string[] args)
+    public ApplicationContainer Build(
+        ApplicationDefinition appDefinition,
+        string[] args)
     {
-        return new Application(appDefinition);
+        var app = new Application();
+        return new(app);
     }
 }
