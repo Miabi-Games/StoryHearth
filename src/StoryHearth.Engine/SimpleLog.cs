@@ -6,18 +6,22 @@ namespace StoryHearth.Engine;
 
 public class SimpleLog : Log
 {
-    public string Name { get; }
+    public string Tag { get; }
     public ImmutableArray<ILogger> Loggers { get; }
 
-    public SimpleLog(string name, IEnumerable<ILogger> loggers)
+    public SimpleLog(string tag, IEnumerable<ILogger> loggers)
     {
-        Name = name ?? "";
+        Tag = tag ?? "";
         Loggers = loggers.ToImmutableArray();
     }
 
     protected override void Write(LogEventType type, string summary, string? details)
     {
         var now = DateTime.Now;
-        foreach (var logger in Loggers) logger.Write(now, Name, type, summary, details);
+
+        foreach (var logger in Loggers)
+        {
+            logger.Write(now, Tag, type, summary, details);
+        }
     }
 }
